@@ -1,0 +1,16 @@
+{
+  "componentName": "Button",
+  "position": {
+    "type": "",
+    "left": "80%",
+    "top": "10%",
+    "height": "10%",
+    "width": "20%"
+  },
+  "props": {
+    "text": {
+      "value": "button"
+    },
+    "colour": "rgb(49 58 10)"
+  }
+}
