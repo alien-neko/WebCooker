@@ -36,6 +36,11 @@
   border-radius: 4px;
 }
 
+pre {
+  height: 100%;
+  margin: 0 !important;
+}
+
 .ui {
   background-color: white;
 }
@@ -44,4 +49,37 @@
   color: white;
 }
 
-.js {}
+.hljs {
+  background-color: white !important;
+}
+
+/* 
+.hljs ul {
+  list-style: decimal;
+  margin: 0 0 0 40px !important;
+  padding: 0
+}
+
+.hljs li {
+  list-style: decimal-leading-zero;
+  border-left: 1px solid #333 !important;
+  padding: 2px 5px !important;
+  margin: 0 !important;
+  line-height: 14px;
+  width: 100%;
+  box-sizing: border-box
+} */
+
+/* .hljs li:nth-of-type(even) {
+  background-color: white;
+  color: inherit
+} */
+
+
+.javascript {
+  height: inherit;
+}
+
+.spin {
+  height: 100%
+}
