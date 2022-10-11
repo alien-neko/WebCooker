@@ -12,5 +12,33 @@
       "value": "button"
     },
     "colour": "rgb(49 58 10)"
+  },
+  "componentName1": "Button",
+  "position1": {
+    "type": "",
+    "left": "80%",
+    "top": "10%",
+    "height": "10%",
+    "width": "20%"
+  },
+  "props1": {
+    "text": {
+      "value": "button"
+    },
+    "colour": "rgb(49 58 10)"
+  },
+  "componentName2": "Button",
+  "position2": {
+    "type": "",
+    "left": "80%",
+    "top": "10%",
+    "height": "10%",
+    "width": "20%"
+  },
+  "props2": {
+    "text": {
+      "value": "button"
+    },
+    "colour": "rgb(49 58 10)"
   }
 }

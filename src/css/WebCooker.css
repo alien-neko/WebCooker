@@ -27,30 +27,37 @@
   width: 31%;
   border-radius: 5px;
   padding: 30px 10px 10px 10px;
+  height: inherit;
 }
 
 .content {
   height: 100%;
-  overflow: auto;
-  background-color: white;
+  /* overflow: auto; */
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  /* background-color: white; */
   border-radius: 4px;
+  padding: 8px;
+  scrollbar-width: none;
 }
 
 pre {
   height: 100%;
   margin: 0 !important;
+  color: white;
 }
 
 .ui {
   background-color: white;
 }
 
-.json {
+/* .json {
   color: white;
-}
+} */
 
 .hljs {
-  background-color: white !important;
+  background-color: rgb(29 31 33) !important;
 }
 
 /* 
@@ -83,3 +90,15 @@ pre {
 .spin {
   height: 100%
 }
+
+/* .hljs-keyword {
+  color: rgb(219, 65, 157);
+}
+
+.hljs-name {
+  color: rgb(89, 232, 139) !important;
+}
+
+.hljs-string {
+  color: rgb(236, 146, 67) !important;
+} */

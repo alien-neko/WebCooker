@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import WebCooker from './component/WebCooker';
 import reportWebVitals from './reportWebVitals';
-// import 'antd/dist/antd.css';
 import 'antd/dist/antd.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

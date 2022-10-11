@@ -7,8 +7,9 @@ import '../mock/mockdata';
 import loadable from './loadable';
 
 import Highlight from 'react-highlight';
-import hljs from 'highlight.js';
-import "highlight.js/styles/mono-blue.css";
+// import hljs from 'highlight.js';
+// import "highlight.js/styles/mono-blue.css";
+import 'highlight.js/styles/vs2015.css';
 
 import { UnControlled as CodeMirror } from 'react-codemirror2';
 // import 'codemirror/lib/codemirror.js';
@@ -39,9 +40,9 @@ const WebCooker = () => {
             console.log("res: ", res);
             let filename = res.data.filename;
             let filepath = './result/' + filename;
-            let file = new File([], filepath);
-            console.log(filename, file);
-            if (file) {
+            // let file = new File([], filepath);
+            // console.log(filename, file);
+            if (filepath) {
                 setTimeout(() => {
                     try {
                         axios.get(filepath).then(res => {
@@ -67,7 +68,7 @@ const WebCooker = () => {
         })
     };
 
-    const Result = loadable(() => import('../result/result.js'));
+    const Result = loadable(() => import('../result/result'));
 
 
     return (
@@ -80,7 +81,17 @@ const WebCooker = () => {
                 <Row className='show'>
                     <Col className="col1">
                         <div className="content json">
-                            {json && <ReactJson collapsed={false} src={json} name={false} displayDataTypes={false} />}
+                            {json &&
+                                <ReactJson
+                                    onEdit={(value) => {
+                                        console.log(value);
+                                    }}
+                                    collapsed={false}
+                                    src={json}
+                                    name={false}
+                                    theme={'google'}
+                                    displayDataTypes={false}
+                                />}
                         </div>
                     </Col>
                     <Col className="col2">

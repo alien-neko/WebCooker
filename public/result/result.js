@@ -5,6 +5,22 @@ const Result = () => {
     <Button>
       result
     </Button>
+    <div>
+      <Button>
+        result
+      </Button>
+    </div>
+
+    <div>
+      <Button>
+        result
+      </Button>
+    </div>
+    <div>
+      <Button>
+        result
+      </Button>
+    </div>
   </div>
   )
 };
