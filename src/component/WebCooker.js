@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Row, Col, Divider, Spin } from 'antd';
+import { Button, Row, Col, Divider, Spin, Select, MenuProps, Menu } from 'antd';
 import '../css/WebCooker.css';
 import axios from 'axios';
 import ReactJson from 'react-json-view';
@@ -18,7 +18,7 @@ import { UnControlled as CodeMirror } from 'react-codemirror2';
 // // 代码模式，clike是包含java,c++等模式的
 // import 'codemirror/mode/clike/clike'
 // import 'codemirror/mode/javascript/javascript'   //js
-
+const Option = Select.Option;
 const WebCooker = () => {
 
     const [json, setJson] = useState(null);
@@ -95,6 +95,12 @@ const WebCooker = () => {
                         </div>
                     </Col>
                     <Col className="col2">
+                        <div className='frameSelect'>
+                            <Select style={{ 'borderRadius': '4px' }} defaultActiveFirstOption defaultValue="react">
+                                <Option key="react" value="react">React</Option>
+                                <Option key="vue" value="vue">vue</Option>
+                            </Select>
+                        </div>
                         <div className="content js">
                             {js && <Highlight className="javascript mycode" >
                                 {js}

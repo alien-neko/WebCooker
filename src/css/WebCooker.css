@@ -2,7 +2,15 @@
   width: 100%;
   padding: 1vh;
   min-Width: 900px;
-  height: 100vh;
+  height: calc(100vh - 64px);
+}
+
+.ant-spin-container {
+  height: inherit;
+}
+
+.ant-spin-nested-loading {
+  height: inherit;
 }
 
 .upload {
@@ -13,7 +21,7 @@
 }
 
 .show {
-  height: calc(95vh - 31px);
+  height: calc(100% - 31px);
   /* background-color: lightgray; */
   flex-direction: row;
   justify-content: space-around;
@@ -23,11 +31,16 @@
 .col1,
 .col2,
 .col3 {
-  background-color: rgb(34, 31, 31);
+  background-color: #001529;
   width: 31%;
   border-radius: 5px;
-  padding: 30px 10px 10px 10px;
+  padding: 40px 10px 10px 10px;
   height: inherit;
+}
+
+.col2 {
+  position: relative;
+  /* padding: 10px; */
 }
 
 .content {
@@ -57,7 +70,7 @@ pre {
 } */
 
 .hljs {
-  background-color: rgb(29 31 33) !important;
+  background-color: #001529 !important;
 }
 
 /* 
@@ -88,7 +101,13 @@ pre {
 }
 
 .spin {
-  height: 100%
+  height: 100%;
+}
+
+.frameSelect {
+  position: absolute;
+  left: 8px;
+  top: 8px;
 }
 
 /* .hljs-keyword {
@@ -101,4 +120,28 @@ pre {
 
 .hljs-string {
   color: rgb(236, 146, 67) !important;
+} */
+
+.ant-layout {
+  overflow: hidden;
+}
+
+/* .ant-layout-header {
+  padding: 0% !important;
+} */
+.react-json-view {
+  background-color: #001529 !important;
+}
+
+/* #components-layout-demo-top .logo {
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.ant-row-rtl #components-layout-demo-top .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
 } */
