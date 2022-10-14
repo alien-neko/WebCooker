@@ -1,4 +1,4 @@
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import { DiffOutlined, FileImageOutlined } from '@ant-design/icons';
 import { Menu, Layout } from 'antd';
 import { Content } from 'antd/lib/layout/layout';
 import React, { useState } from 'react';
@@ -9,12 +9,12 @@ const items = [
   {
     label: '图片转换',
     key: '1',
-    icon: <MailOutlined />,
+    icon: <FileImageOutlined />,
   },
   {
     label: '图片识别结果对比',
     key: '2',
-    icon: <AppstoreOutlined />,
+    icon: <DiffOutlined />,
   },
 ];
 const { Header } = Layout;
@@ -26,16 +26,27 @@ const Main = () => {
     console.log('click ', e);
     setCurrent(e.key);
   };
+  const show = {
+    display: 'block'
+  };
+  const hidden = {
+    display: 'none'
+  };
 
   return <Layout>
     <Header>
-      <div className="logo" />
+      <div>
+        <img src='c.jpeg' className='logo' alt='logo' />
+      </div>
       <Menu theme='dark' onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
     </Header>
     <Content>
-      {
-        current == '1' ? <WebCooker /> : <ImageDiff />
-      }
+      <div style={current == '1' ? show : hidden}>
+        <WebCooker />
+      </div>
+      <div style={current == '1' ? hidden : show}>
+        <ImageDiff />
+      </div>
     </Content>
   </Layout>
 };

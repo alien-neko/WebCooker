@@ -13,15 +13,15 @@
   height: inherit;
 }
 
-.upload {
+/* .upload {
   display: flex;
   justify-content: flex-start;
   height: 30px;
   margin-bottom: 1vh;
-}
+} */
 
 .show {
-  height: calc(100% - 31px);
+  height: calc(100% - 39px);
   /* background-color: lightgray; */
   flex-direction: row;
   justify-content: space-around;
@@ -126,22 +126,18 @@ pre {
   overflow: hidden;
 }
 
-/* .ant-layout-header {
-  padding: 0% !important;
-} */
+.ant-layout-header {
+  padding: 0 24px !important;
+}
+
 .react-json-view {
   background-color: #001529 !important;
 }
 
-/* #components-layout-demo-top .logo {
+.logo {
   float: left;
   width: 120px;
-  height: 31px;
-  margin: 16px 24px 16px 0;
+  height: 34px;
+  margin: 15px 24px 15px 0;
   background: rgba(255, 255, 255, 0.3);
 }
-
-.ant-row-rtl #components-layout-demo-top .logo {
-  float: right;
-  margin: 16px 0 16px 24px;
-} */

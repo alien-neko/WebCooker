@@ -16,7 +16,7 @@ export default Mock.mock(
   (req) => {
     console.log(req);
     let req_data = JSON.parse(req.body);
-    if (req_data.file == '1.img') {
+    if (req_data.file) {
       return data_success;
     }
     return data_error;

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Button, Row, Col, Divider, Spin, Select, MenuProps, Menu } from 'antd';
+import React, { useState } from 'react';
+import { Row, Col, Divider, Spin, Select, Input } from 'antd';
 import '../css/WebCooker.css';
 import axios from 'axios';
 import ReactJson from 'react-json-view';
@@ -11,7 +11,7 @@ import Highlight from 'react-highlight';
 // import "highlight.js/styles/mono-blue.css";
 import 'highlight.js/styles/vs2015.css';
 
-import { UnControlled as CodeMirror } from 'react-codemirror2';
+// import { UnControlled as CodeMirror } from 'react-codemirror2';
 // import 'codemirror/lib/codemirror.js';
 // import 'codemirror/lib/codemirror.css';
 // import 'codemirror/theme/yonce.css';
@@ -32,10 +32,10 @@ const WebCooker = () => {
     //     });
     // }, [js])
 
-    const uploadImg = () => {
+    const uploadImg = (file) => {
         setLoading(true);
         axios.post('/api/upload/img', {
-            file: '1.img'
+            file: file
         }).then((res) => {
             console.log("res: ", res);
             let filename = res.data.filename;
@@ -70,12 +70,11 @@ const WebCooker = () => {
 
     const Result = loadable(() => import('../result/result'));
 
-
     return (
         <div className='main'>
             <Spin spinning={loading}>
                 <div className='upload'>
-                    <Button type='primary' onClick={uploadImg}>上传图片</Button>
+                    <Input type='file' onChange={(event) => { uploadImg(event.target.files[0]) }} />
                 </div>
                 <Divider style={{ margin: '1vh' }} />
                 <Row className='show'>
