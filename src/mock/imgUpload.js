@@ -3,7 +3,6 @@ import Mock from 'mockjs';
 let data_success =
 {
   status: 'ok',
-  filename: '1.json'
 };
 
 let data_error =
@@ -12,12 +11,15 @@ let data_error =
 };
 
 export default Mock.mock(
-  '/api/upload/img', 'post',
+  '/api/img/upload', 'post',
   (req) => {
-    console.log(req);
     let req_data = JSON.parse(req.body);
-    if (req_data.file) {
-      return data_success;
+    console.log('请求体：', req);
+    if (req_data.image) {
+      return {
+        ...data_success,
+        image: req_data.image
+      };
     }
     return data_error;
   }

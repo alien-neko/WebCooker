@@ -13,6 +13,7 @@ const loadingComponent = ({ error, pastDelay }) => {
 };
 
 //过场组件默认采用通用的，若传入了loading，则采用传入的过场组件
+// eslint-disable-next-line
 export default (loader, loading = loadingComponent) => {
   return Loadable({
     loader,

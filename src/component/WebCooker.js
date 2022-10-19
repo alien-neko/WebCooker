@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Row, Col, Divider, Spin, Select, Input } from 'antd';
+import { Row, Col, Divider, Spin, Select, Button } from 'antd';
 import '../css/WebCooker.css';
 import axios from 'axios';
 import ReactJson from 'react-json-view';
-import '../mock/mockdata';
+import '../mock/imgTrans';
 import loadable from './loadable';
 
 import Highlight from 'react-highlight';
@@ -32,12 +32,11 @@ const WebCooker = () => {
     //     });
     // }, [js])
 
-    const uploadImg = (file) => {
+    const ImgTransformation = () => {
+        console.log("图片转换");
         setLoading(true);
-        axios.post('/api/upload/img', {
-            file: file
-        }).then((res) => {
-            console.log("res: ", res);
+        axios.post('/api/img/trans', { file: '1.img' }).then((res) => {
+            console.log("图片转换完成");
             let filename = res.data.filename;
             let filepath = './result/' + filename;
             // let file = new File([], filepath);
@@ -60,10 +59,12 @@ const WebCooker = () => {
                         // fileReader.readAsText(file);
                     } catch (err) {
                         alert("fileReader读取失败");
+                        setLoading(false);
                     }
                 }, 1000);
             } else {
                 alert("文件不存在");
+                setLoading(false);
             }
         })
     };
@@ -73,10 +74,10 @@ const WebCooker = () => {
     return (
         <div className='main'>
             <Spin spinning={loading}>
-                <div className='upload'>
-                    <Input type='file' onChange={(event) => { uploadImg(event.target.files[0]) }} />
+                <div className='imgTrans'>
+                    <Button type='primary' onClick={ImgTransformation}>开始转换</Button>
                 </div>
-                <Divider style={{ margin: '1vh' }} />
+                <Divider className='divider' />
                 <Row className='show'>
                     <Col className="col1">
                         <div className="content json">

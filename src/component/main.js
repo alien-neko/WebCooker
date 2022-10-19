@@ -7,14 +7,14 @@ import ImageDiff from './ImageDiff';
 import '../css/WebCooker.css';
 const items = [
   {
-    label: '图片转换',
+    label: '图片识别结果对比',
     key: '1',
-    icon: <FileImageOutlined />,
+    icon: <DiffOutlined />,
   },
   {
-    label: '图片识别结果对比',
+    label: '图片转换',
     key: '2',
-    icon: <DiffOutlined />,
+    icon: <FileImageOutlined />,
   },
 ];
 const { Header } = Layout;
@@ -41,11 +41,11 @@ const Main = () => {
       <Menu theme='dark' onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
     </Header>
     <Content>
-      <div style={current == '1' ? show : hidden}>
-        <WebCooker />
-      </div>
-      <div style={current == '1' ? hidden : show}>
+      <div style={current === '1' ? show : hidden}>
         <ImageDiff />
+      </div>
+      <div style={current === '1' ? hidden : show}>
+        <WebCooker />
       </div>
     </Content>
   </Layout>
